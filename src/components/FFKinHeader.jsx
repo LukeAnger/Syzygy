@@ -7,10 +7,7 @@ const FFKin = () => {
   return (
     <div className='fc jc-cen ai-cen welcome'>
 
-      <div style={{fontSize: '1.3rem', textAlign: 'center'}}>Syzygy</div>
-      <div>----------------------------------</div>
-      <div style={{fontSize: '1.2rem', textAlign: 'center'}}>Free Fall Kinematics</div>
-
+      <div style={{fontSize: '1.4rem', textAlign: 'center'}}>Free Fall Kinematics Solver</div>
 
     </div>
   )

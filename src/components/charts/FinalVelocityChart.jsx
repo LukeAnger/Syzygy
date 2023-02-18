@@ -1,5 +1,5 @@
 import React from 'react'
-import {displayVariable, subscript, superscript, eq1, eq2, eq3, quad, sqrtHTML} from './equations.js'
+import {displayVariable, subscript, superscript, eq1, eq2, eq3, quad, sqrtHTML} from '../equations.js'
 
 import DynamicChart from './DynamicChart.jsx'
 
