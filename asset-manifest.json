@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/syzygy/static/js/main.f2fba233.js",
+    "main.js": "/syzygy/static/js/main.f35097e2.js",
     "index.html": "/syzygy/index.html",
-    "main.f2fba233.js.map": "/syzygy/static/js/main.f2fba233.js.map"
+    "main.f35097e2.js.map": "/syzygy/static/js/main.f35097e2.js.map"
   },
   "entrypoints": [
-    "static/js/main.f2fba233.js"
+    "static/js/main.f35097e2.js"
   ]
 }
