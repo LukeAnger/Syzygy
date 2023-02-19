@@ -1,17 +1,13 @@
 import React, {useState} from 'react';
-import VariableNames from './components/VariableNames.jsx'
-import Equations from './components/Equations.jsx'
 import Notepad from './components/Notepad.jsx'
 
 import { Charts } from './components/Charts.js'
 import { Solvers } from './components/Solvers.js'
+import { Static } from './components/Static.js'
 
 import FreeBody from './components/FreeBody.jsx'
-import SyzygyLogo from './components/SyzygyLogo.jsx'
 // import Storymode from './components/Storymode.jsx'
 
-import NoQuestionMark from './components/NoQuestionMark.jsx'
-import FFKinHeader from './components/FFKinHeader.jsx'
 import ManualInput from './components/ManualInput.jsx'
 import {apple, treeOak, logo} from './components/svgs.js'
 
@@ -36,11 +32,12 @@ const App = () => {
 
 
   let empty = (variables.x1 === '' && variables.x2 === '' && variables.v1 === '' && variables.v2 === '' && variables.t === '')
+
   const onChangeVariables = (obj) => {
     setVariables(obj)
   }
 
-  let resetVars = () => {
+  const resetVars = () => {
     setVariables({
       a: '-9.82',
       x1: '', x2: '',
@@ -48,7 +45,7 @@ const App = () => {
       t: '', units: 'metric'
     })
   }
-  let animationType = () => {
+  const animationType = () => {
 
     if (animate !== 0) setAnimate(0)
     else if (variables.v1 > 0) setAnimate(1)
@@ -58,13 +55,13 @@ const App = () => {
 
   return(
     <section style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '95vh', width: '95vw'}}>
-      <SyzygyLogo />
-      <FFKinHeader vars={variables} />
+      <Static.SyzygyLogo />
+      <Static.FFKinHeader vars={variables} />
       <div className='fr eqs-vars'>
 
-        <VariableNames />
+        <Static.VariableNames />
         {/* <Notepad /> */}
-        <Equations />
+        <Static.Equations />
 
       </div>
 
@@ -77,7 +74,7 @@ const App = () => {
         {variables.x2 == '?' ? <Solvers.FinalPositionSolver vars={variables} /> : null}
         {variables.v1 == '?' ? <Solvers.InitialVelocitySolver vars={variables} /> : null}
         {variables.v2 == '?' ? <Solvers.FinalVelocitySolver vars={variables} /> : null}
-        { empty ? <NoQuestionMark vars={variables} /> : null}
+        { empty ? <Static.NoQuestionMark vars={variables} /> : null}
 
       </div>
 

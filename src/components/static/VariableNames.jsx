@@ -1,5 +1,5 @@
 import React from 'react';
-import {displayVariable, subscript, superscript} from './equations.js'
+import {displayVariable, subscript, superscript} from '../equations.js'
 
 const VariableNames = ({vars}) => {
 

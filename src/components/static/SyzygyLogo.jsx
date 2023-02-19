@@ -13,7 +13,7 @@ const SyzygyLogo = () => {
         <div className='venus  pa' ></div>
         <div className='earth  pa' ></div>
         <div className='mars  pa' ></div>
-        <div className='jupiter '>
+        <div className='jupiter'>
           <div className='red-eye pa' ></div>
         </div>
         <div className='saturn '>
