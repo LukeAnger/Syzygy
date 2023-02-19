@@ -6,9 +6,11 @@ This is a web application that helps students learn and practice solving free fa
 
 To use this application, you will need to have node.js installed on your computer. You can download it here [Node.js](https://nodejs.org/) installed on your computer. Once you have Node.js installed, you can clone this repository and install the dependencies by running the following commands:
 
-```git clone https://github.com/LukeAnger/syzygy.git```
-```cd syzygy```
-```npm install```
+```
+git clone https://github.com/LukeAnger/syzygy.git
+cd syzygy
+npm install
+```
 
 
 ## Development
@@ -16,7 +18,9 @@ To use this application, you will need to have node.js installed on your compute
 To start the development server, run the following command:
 
 
-```npm run dev```
+```
+npm run dev
+```
 
 
 This will start the server and launch the application in your browser with hot reloading enabled, so you can make changes to the code and see them in real-time.
@@ -25,7 +29,9 @@ This will start the server and launch the application in your browser with hot r
 
 The application is currently deployed at [lukeanger.com/syzygy](https://lukeanger.com/syzygy). To deploy the application to a different server, you can use the following command:
 
-```npm run build```
+```
+npm run build
+```
 
 
 This will create a build directory with the compiled application files that can be deployed to a server of your choice.
