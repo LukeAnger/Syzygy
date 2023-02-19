@@ -3,7 +3,7 @@
 body {
   margin:0;
   height: 100vh;
-  background-color: #464066;
+  background-color: #6b629e;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   display: flex;
@@ -262,6 +262,8 @@ body {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 6px 6px 0px 0px rgb(134, 45, 45);
+  cursor:text;
+  pointer-events: none;
 }
 
 .hint1 {
@@ -277,7 +279,7 @@ body {
   box-shadow: 6px 6px 0px 0px rgb(134, 45, 45);
 }
 
-.hint:active div{
+.hint:hover div{
   opacity: 1;
 }
 
