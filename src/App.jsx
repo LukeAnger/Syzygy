@@ -1,21 +1,12 @@
 import React, {useState} from 'react';
-import Notepad from './components/Notepad.jsx'
-
 import { Charts } from './components/Charts.js'
 import { Solvers } from './components/Solvers.js'
 import { Static } from './components/Static.js'
-
 import FreeBody from './components/FreeBody.jsx'
 import Storymode from './components/Storymode.jsx'
-
 import ManualInput from './components/ManualInput.jsx'
 import {apple, treeOak, logo} from './components/svgs.js'
-
-
-
-
-
-
+// import Notepad from './components/Notepad.jsx' bug testing 2/15/2023
 
 const varObj = {
   a: '-9.82',
@@ -29,7 +20,6 @@ const App = () => {
   const [variables, setVariables] = useState(varObj)
   const [animate, setAnimate] = useState(0)
   const [showScene, setShowScene] = useState(false)
-
 
   let empty = (variables.x1 === '' && variables.x2 === '' && variables.v1 === '' && variables.v2 === '' && variables.t === '')
 

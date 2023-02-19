@@ -40,7 +40,7 @@ const Storymode = ({ vars, onChangeVariables }) => {
     setNewString(formattedString);
 
 
-    console.log(value)
+    console.log(initialVelocity)
     onChangeVariables({
       v1: initialVelocity,
       v2: finalVelocity,

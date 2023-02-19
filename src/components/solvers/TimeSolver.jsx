@@ -54,7 +54,7 @@ const TimeSolver = ({vars}) => {
 
         </div>
 
-        <div><b>t</b> = {t.toFixed(2)} s</div>
+        <div>t = {t.toFixed(2)} s</div>
 
       </div>
     )
