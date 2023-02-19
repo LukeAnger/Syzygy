@@ -279,7 +279,7 @@ body {
   box-shadow: 6px 6px 0px 0px rgb(134, 45, 45);
 }
 
-.hint:hover div {
+.hint:hover div{
   opacity: 1;
 }
 
