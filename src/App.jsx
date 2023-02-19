@@ -68,12 +68,17 @@ const App = () => {
       <div className='maths fr jc-sb'>
 
         <ManualInput vars={variables} onChangeVariables={onChangeVariables} animationType={animationType} resetVars={resetVars}/>
-        {/* <Equation vars={variables} solvedVariables={solvedVariables}/> */}
+
         {variables.t == '?' ? <Solvers.TimeSolver vars={variables} /> : null}
+
         {variables.x1 == '?' ? <Solvers.InitialPositionSolver vars={variables} /> : null}
+
         {variables.x2 == '?' ? <Solvers.FinalPositionSolver vars={variables} /> : null}
+
         {variables.v1 == '?' ? <Solvers.InitialVelocitySolver vars={variables} /> : null}
+
         {variables.v2 == '?' ? <Solvers.FinalVelocitySolver vars={variables} /> : null}
+
         { empty ? <Static.NoQuestionMark vars={variables} /> : null}
 
       </div>
