@@ -6,7 +6,7 @@ import { Solvers } from './components/Solvers.js'
 import { Static } from './components/Static.js'
 
 import FreeBody from './components/FreeBody.jsx'
-// import Storymode from './components/Storymode.jsx'
+import Storymode from './components/Storymode.jsx'
 
 import ManualInput from './components/ManualInput.jsx'
 import {apple, treeOak, logo} from './components/svgs.js'
@@ -88,7 +88,7 @@ const App = () => {
 
         <div id='scene'>
 
-            {/* {showScene ? treeOak(animate, animationType) : <Storymode vars={variables} onChangeVariables={onChangeVariables}/>} */}
+            {showScene ? treeOak(animate, animationType) : <Storymode vars={variables} onChangeVariables={onChangeVariables}/>}
         </div>
 
         <div id='free-body'>

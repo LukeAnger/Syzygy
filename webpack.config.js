@@ -31,7 +31,7 @@ module.exports = {
     },
     compress: true,
     // [port] what port on our local machine to run the dev server
-    port: 3000,
+    port: 3140,
   },
   output: {
     path: path.resolve(__dirname, 'build'),
