@@ -44,4 +44,4 @@ This will create a build directory with the compiled application files that can 
 
 ## Contributing
 
-If you would like to contribute to Syzygy, please open an issue or submit a pull request on GitHub. We welcome any and all contributions! Currently looking to improve the string parsing via regex or switch over to AI text parseing. I am also going to start adding other areas of physics such as Ohm's Law, 2-D kinematics and then branch out into other disciplines like chemistry and calculus. I welcome any and all contributions!
+If you would like to contribute to Syzygy, please open an issue or submit a pull request on GitHub. Currently looking to improve the string parsing via regex or switch over to AI text parseing. I am also going to start adding other areas of physics such as Ohm's Law, 2-D kinematics and then branch out into other disciplines like chemistry and calculus. I welcome any and all contributions!
