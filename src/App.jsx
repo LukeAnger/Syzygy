@@ -43,11 +43,12 @@ const App = () => {
   };
 
   // Determine the type of animation to use
+  // Currently being developed access the animationType and show scene state variables in the react dev tools to view in browser
   const animationType = () => {
-    if (animate !== 0) setAnimate(0);
-    else if (variables.v1 > 0) setAnimate(1);
-    else if (variables.v1 === 0) setAnimate(2);
-    else if (variables.v1 < 0) setAnimate(3);
+    if (animate !== 0) setAnimate(0); //reset apple
+    else if (variables.v1 > 0) setAnimate(1); // animate v1 > 0
+    else if (variables.v1 === 0) setAnimate(2); // animate v1 = 0
+    else if (variables.v1 < 0) setAnimate(3); // animate v1 < 0
   };
 
   return (
@@ -55,11 +56,13 @@ const App = () => {
       <Static.SyzygyLogo />
       <Static.FFKinHeader vars={variables} />
 
+      {/* Rendering of static variables and equations components*/}
       <div className="fr eqs-vars">
         <Static.VariableNames />
         <Static.Equations />
       </div>
 
+      {/* Rendering of manual input component */}
       <div className="maths fr jc-sb">
         <ManualInput vars={variables} onChangeVariables={onChangeVariables} animationType={animationType} resetVars={resetVars} />
 
@@ -83,6 +86,8 @@ const App = () => {
           <Static.NoQuestionMark vars={variables} />}
       </div>
 
+          {/* Rendering of scene and chart components */}
+          {/* Not implemented currently */}
       <div className="diagrams fr">
         <div id="scene">
           {showScene ? treeOak(animate, animationType) : <Storymode vars={variables} onChangeVariables={onChangeVariables} />}
@@ -90,7 +95,6 @@ const App = () => {
         <div id="free-body">
 
           {/* Conditional rendering of chart components */}
-
           {variables.t === '?' &&
             <Charts.TimeChart vars={variables} />}
 

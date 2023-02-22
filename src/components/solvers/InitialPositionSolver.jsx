@@ -42,11 +42,16 @@ const InitialPositionSolver = ({vars}) => {
     )
       // Check if v1, v2, and x2 are truthy
   } else if (vars.t && vars.v2 && vars.x2) {
+    // Calculate the value of x1
 
     x1 = vars.x2 - (vars.v2 - 0.5*vars.a*vars.t) - 0.5*vars.a*vars.t**2
+    // Calculate the value of v1
     let v1 = (vars.v2 - 0.5*vars.a*vars.t)
+
+    // Return a JSX element with class 'fc solved'
     return (
       <div className='fc solved' >
+
         <div className='steps s1 fc ai-cen'>
 
           <div >STEP ONE: Pick your equation</div>
@@ -62,19 +67,25 @@ const InitialPositionSolver = ({vars}) => {
         </div>
 
         <div className='steps fc ai-cen'>
+
           <div className='ta-cen'>STEP THREE: Now we can use all known variables to solve for {subscript('x', '1')} with equation three </div>
           <div>{subscript('x', '1')} = {vars.x2} - {v1}&#40;{vars.t}&#41; - 0.5&#40;{vars.a}&#41;&#40;{superscript(vars.t, '2')}&#41;</div>
+
         </div>
 
         <div>{subscript('x', '1')} = {x1.toFixed(2)} m</div>
 
       </div>
     )
-
+      // Check if v1, v2, and x2 are truthy
   } else if (vars.v1 && vars.v2 && vars.x2) {
+    // Calculate the value of x1
     x1 = (vars.v2**2 - vars.v1**2)/(-vars.a*2 + vars.x2)
+
+    // Return a JSX element with class 'fc solved'
     return (
       <div className='fc solved' >
+
         <div className='steps s1 fc ai-cen'>
 
           <div >STEP ONE: Pick your equation</div>
@@ -90,8 +101,10 @@ const InitialPositionSolver = ({vars}) => {
         </div>
 
         <div className='steps fc ai-cen'>
+
           <div>STEP THREE: Now use equation three to solve for {subscript('x', '1')}</div>
           <div>{subscript('x', '1')} = &#40;&#40;{vars.v2}² - {vars.v1}²&#41;/-2&#40;{vars.a}&#41;&#41; + {vars.x2}</div>
+
         </div>
 
         <div>{subscript('x', '1')} = {x1.toFixed(2)} m</div>

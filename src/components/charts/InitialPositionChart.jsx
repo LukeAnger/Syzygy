@@ -1,5 +1,5 @@
 import React from 'react'
-import {displayVariable, subscript, superscript, eq1, eq2, eq3, quad} from '../equations.js'
+import PropTypes from 'prop-types';
 import DynamicChart from './DynamicChart.jsx'
 
 const InitialPositionChart = ({vars}) => {
@@ -67,6 +67,18 @@ const InitialPositionChart = ({vars}) => {
     return null
   }
 }
+
+InitialPositionChart.propTypes = {
+  vars: PropTypes.shape({
+    a: PropTypes.string.isRequired,
+    x1: PropTypes.string.isRequired,
+    x2: PropTypes.string.isRequired,
+    v1: PropTypes.string.isRequired,
+    v2: PropTypes.string.isRequired,
+    t: PropTypes.string.isRequired,
+    units: PropTypes.oneOf(['metric', 'imperial']).isRequired,
+  }).isRequired,
+};
 
 export default InitialPositionChart
 
