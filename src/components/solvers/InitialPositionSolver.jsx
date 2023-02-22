@@ -1,16 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {displayVariable, subscript, superscript, eq1, eq2, eq3, quad} from '../equations.js'
 
 const InitialPositionSolver = ({vars}) => {
 
+  const { a, x2, v1, v2, units } = vars;
+
   let x1 = 0;
-  console.log('INITIAL POSITION')
+
   if (vars.t && vars.v1 && vars.x2) {
-    console.log('test')
+
     x1 = vars.x2 - vars.v1*vars.t - 0.5*vars.a*vars.t**2
 
     return (
       <div className='fc solved' >
+
         <div className='steps s1 fc ai-cen'>
 
           <div >STEP ONE: Pick your equation</div>
@@ -26,16 +30,19 @@ const InitialPositionSolver = ({vars}) => {
         </div>
 
         <div className='steps fc ai-cen'>
+
           <div>STEP THREE: Plug in your known variables</div>
           <div>{subscript('x', '1')} = {vars.x2} - {vars.v1}&#40;{vars.t}&#41; - 0.5&#40;{vars.a}&#41;&#40;{superscript(vars.t, '2')}&#41;</div>
+
         </div>
 
         <div>{subscript('x', '1')} = {x1.toFixed(2)} m</div>
 
       </div>
     )
-
+      // Check if v1, v2, and x2 are truthy
   } else if (vars.t && vars.v2 && vars.x2) {
+
     x1 = vars.x2 - (vars.v2 - 0.5*vars.a*vars.t) - 0.5*vars.a*vars.t**2
     let v1 = (vars.v2 - 0.5*vars.a*vars.t)
     return (
@@ -98,6 +105,18 @@ const InitialPositionSolver = ({vars}) => {
     )
   }
 }
+
+InitialPositionSolver.propTypes = {
+  vars: PropTypes.shape({
+    a: PropTypes.string.isRequired,
+    x1: PropTypes.string.isRequired,
+    x2: PropTypes.string.isRequired,
+    v1: PropTypes.string.isRequired,
+    v2: PropTypes.string.isRequired,
+    t: PropTypes.string.isRequired,
+    units: PropTypes.oneOf(['metric', 'imperial']).isRequired,
+  }).isRequired,
+};
 
 export default InitialPositionSolver
 

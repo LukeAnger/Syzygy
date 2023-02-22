@@ -1,7 +1,7 @@
 import React from 'react';
 import {eq1, eq2, eq3, quad} from '../equations.js'
 
-const Equations = ({vars, solvedVariables}) => {
+const Equations = () => {
 
   return (
     <div className='equations'>
@@ -13,5 +13,7 @@ const Equations = ({vars, solvedVariables}) => {
     </div>
   )
 }
+
+
 
 export default Equations

@@ -1,13 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {displayVariable, subscript, superscript, eq1, eq2, eq3, quad, sqrtHTML} from '../equations.js'
 
 
 const FinalVelocitySolver = ({vars}) => {
-  let v2 = 0;
-  console.log('Initial Velocity')
-  if (vars.t && vars.v1) {
 
-    v2 = Number(vars.v1) + vars.a*vars.t
+  const { a, x1, x2, v1, t, units } = vars;
+
+  let v2 = 0;
+
+  if (t && v1) {
+
+    v2 = Number(v1) + a*t
 
     return (
       <div className='fc solved' >
@@ -25,16 +29,16 @@ const FinalVelocitySolver = ({vars}) => {
 
         <div className='steps fc ai-cen'>
           <div>STEP THREE: Now solve for {subscript('v', '1')}</div>
-          <div>{subscript('v', '2')} = {vars.v1} + {vars.a}&#40;{vars.t}&#41;</div>
+          <div>{subscript('v', '2')} = {v1} + {a}&#40;{t}&#41;</div>
         </div>
         <div>{subscript('v', '2')} = {v2.toFixed(2)} m/s</div>
 
       </div>
     )
 
-  } else if (vars.v1 && vars.x1 && vars.x2) {
-    v2 = Math.sqrt(vars.v1**2 + 2*vars.a*(vars.x2-vars.x1))
-    console.log(vars.v1**2 + 2*vars.a*(vars.x2-vars.x1))
+  } else if (v1 && x1 && x2) {
+    v2 = Math.sqrt(v1**2 + 2*a*(x2-x1))
+
     return (
       <div className='fc solved' >
         <div className='steps s1 fc ai-cen'>
@@ -58,7 +62,7 @@ const FinalVelocitySolver = ({vars}) => {
           <div>STEP THREE: Now use equation three to solve for {subscript('v', '2')}</div>
           <div>{subscript('v', '2')} = ±<span style={{fontSize: '1.1rem'}}>√</span>
           <span className='sqrt' style={{borderTop: '1px solid black'}}>
-          {vars.v1}² + 2&#40;{vars.a}&#41;&#40;{vars.x2} - {vars.x1}&#41;
+          {v1}² + 2&#40;{a}&#41;&#40;{x2} - {x1}&#41;
             </span> </div>
         </div>
 
@@ -73,6 +77,18 @@ const FinalVelocitySolver = ({vars}) => {
     )
   }
 }
+
+FinalVelocitySolver.propTypes = {
+  vars: PropTypes.shape({
+    a: PropTypes.string.isRequired,
+    x1: PropTypes.string.isRequired,
+    x2: PropTypes.string.isRequired,
+    v1: PropTypes.string.isRequired,
+    v2: PropTypes.string.isRequired,
+    t: PropTypes.string.isRequired,
+    units: PropTypes.oneOf(['metric', 'imperial']).isRequired,
+  }).isRequired,
+};
 
 export default FinalVelocitySolver
 
